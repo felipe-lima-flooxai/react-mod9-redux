@@ -1,11 +1,11 @@
 import React from "react";
-
+import {connect} from "react-redux"
 
 import Card from "./Card";
 
 
-export default props =>{
-
+const Media =  props =>{
+  console.log(props)
   return (
     <Card title="Media de Números" green>
       <div>
@@ -18,3 +18,10 @@ export default props =>{
   );
 }
 
+function mapStateToProps(state){
+  return {
+    numeros: state.numeros
+  }
+}
+
+export default connect(mapStateToProps)(Media)
