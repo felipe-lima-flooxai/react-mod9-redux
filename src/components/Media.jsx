@@ -5,13 +5,13 @@ import Card from "./Card";
 
 
 const Media =  props =>{
-  console.log(props)
+  const {max, min} = props
   return (
     <Card title="Media de Números" green>
       <div>
         <span>
             <span>Resultado</span>
-            <strong>{10}</strong>
+            <strong>{(max + min) / 2}</strong>
         </span>
       </div>
     </Card>
@@ -20,7 +20,8 @@ const Media =  props =>{
 
 function mapStateToProps(state){
   return {
-    numeros: state.numeros
+    min: state.numeros.min,
+    max: state.numeros.max
   }
 }
 
